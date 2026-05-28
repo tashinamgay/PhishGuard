@@ -1,0 +1,667 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>PhishLens Clean A3 Poster</title>
+<style>
+  @page { size: A3 portrait; margin: 0; }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+    color: #162033;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .poster {
+    width: 841.92px;
+    height: 1191.12px;
+    margin: 0 auto;
+    background: #f5f9ff;
+    overflow: hidden;
+    border: 1px solid #d6e3f3;
+  }
+  .top {
+    height: 150px;
+    background: #081b3f;
+    color: #ffffff;
+    display: grid;
+    grid-template-columns: 116px 1fr 132px;
+    gap: 14px;
+    padding: 12px 26px 10px;
+  }
+  .logo-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: center;
+  }
+  .logo {
+    border: 1px solid rgba(255,255,255,0.35);
+    background: rgba(255,255,255,0.09);
+    border-radius: 4px;
+    text-align: center;
+    padding: 8px 5px;
+    font-size: 10px;
+    letter-spacing: 1px;
+    font-weight: 700;
+    color: #b8d7ff;
+  }
+  .logo small {
+    display: block;
+    margin-top: 2px;
+    color: #d8e8ff;
+    font-size: 8px;
+    letter-spacing: 0;
+    font-weight: 400;
+  }
+  .title-block {
+    text-align: center;
+    padding-top: 2px;
+  }
+  .kicker {
+    color: #8bc1ff;
+    font-size: 8px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    margin-bottom: 5px;
+  }
+  h1 {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 25px;
+    line-height: 1.08;
+  }
+  .subtitle {
+    margin-top: 6px;
+    color: #d9ebff;
+    font-size: 11px;
+  }
+  .authors {
+    margin-top: 8px;
+    font-size: 10px;
+    font-weight: 700;
+  }
+  .school {
+    margin-top: 5px;
+    color: #b9d4f3;
+    font-size: 9px;
+  }
+  .score {
+    align-self: center;
+    background: #2366d1;
+    border-radius: 6px;
+    padding: 12px 8px;
+    text-align: center;
+    border: 1px solid #65a5ff;
+  }
+  .score .label {
+    color: #cfe5ff;
+    font-size: 8px;
+    letter-spacing: 1.4px;
+    font-weight: 700;
+  }
+  .score .value {
+    font-size: 25px;
+    line-height: 1;
+    font-weight: 800;
+    margin: 5px 0 4px;
+  }
+  .score .note {
+    font-size: 8px;
+    color: #e8f3ff;
+  }
+  .nav {
+    height: 34px;
+    background: #2563eb;
+    color: #ffffff;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    align-items: center;
+    text-align: center;
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+  }
+  .abstract {
+    margin: 9px 18px 8px;
+    background: #ffffff;
+    border: 1px solid #c7dcf4;
+    border-radius: 7px;
+    overflow: hidden;
+  }
+  .abstract .bar {
+    background: #1d55c7;
+    color: #ffffff;
+    padding: 6px 10px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 12px;
+    font-weight: 800;
+  }
+  .abstract p {
+    margin: 0;
+    padding: 8px 14px 9px;
+    font-size: 9.5px;
+    line-height: 1.45;
+    font-style: italic;
+  }
+  .grid {
+    margin: 0 18px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+  }
+  .section {
+    background: #ffffff;
+    border: 1px solid #c7dcf4;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .span2 { grid-column: span 2; }
+  .span3 { grid-column: span 3; }
+  .head {
+    padding: 6px 10px;
+    color: #ffffff;
+    background: #1d3f9a;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+  }
+  .head.green { background: #138443; }
+  .head.red { background: #dc2626; }
+  .head.teal { background: #0e7490; }
+  .head.orange { background: #d97706; }
+  .body {
+    padding: 8px 10px;
+    font-size: 8.4px;
+    line-height: 1.34;
+  }
+  ul.clean {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  ul.clean li {
+    margin: 0 0 5px;
+    padding-left: 10px;
+    position: relative;
+  }
+  ul.clean li:before {
+    content: "-";
+    position: absolute;
+    left: 0;
+    color: #2563eb;
+    font-weight: 800;
+  }
+  .callout {
+    margin-top: 8px;
+    padding: 7px 8px;
+    background: #dbeafe;
+    border: 1px solid #93c5fd;
+    border-radius: 5px;
+    color: #0b2859;
+    font-weight: 700;
+    font-size: 8px;
+  }
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px;
+    margin-top: 8px;
+  }
+  .step {
+    border: 1px solid #b9d4f3;
+    border-radius: 5px;
+    text-align: center;
+    padding: 5px 3px;
+    min-height: 58px;
+  }
+  .num {
+    width: 18px;
+    height: 18px;
+    margin: 0 auto 4px;
+    border-radius: 50%;
+    background: #2563eb;
+    color: #ffffff;
+    font-weight: 800;
+    line-height: 18px;
+    font-size: 9px;
+  }
+  .step b {
+    display: block;
+    color: #0b2859;
+    font-size: 7.5px;
+    margin-bottom: 2px;
+  }
+  .step span {
+    color: #475569;
+    font-size: 6.5px;
+    line-height: 1.1;
+  }
+  .arch {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 7px;
+    align-items: stretch;
+  }
+  .box {
+    background: #102a5f;
+    color: #ffffff;
+    border-radius: 4px;
+    padding: 8px 5px;
+    text-align: center;
+    min-height: 48px;
+  }
+  .box.green { background: #138443; }
+  .box b {
+    display: block;
+    font-size: 8px;
+    margin-bottom: 3px;
+  }
+  .box span {
+    font-size: 6.5px;
+    color: #d9ebff;
+    line-height: 1.12;
+  }
+  .design {
+    margin-top: 7px;
+    padding: 7px 8px;
+    background: #dbeafe;
+    border-left: 4px solid #2563eb;
+    font-size: 8px;
+    font-weight: 700;
+  }
+  .split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 8px;
+  }
+  th {
+    background: #0f234d;
+    color: #ffffff;
+    text-align: left;
+    padding: 4px 5px;
+  }
+  td {
+    border-bottom: 1px solid #dbe6f4;
+    padding: 4px 5px;
+  }
+  tr.best td {
+    background: #dbeafe;
+    font-weight: 800;
+    color: #0b2859;
+  }
+  .mini-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    margin-top: 8px;
+  }
+  .metric {
+    background: #0f234d;
+    color: #ffffff;
+    border-radius: 5px;
+    text-align: center;
+    padding: 7px 4px;
+  }
+  .metric .big {
+    font-size: 17px;
+    font-weight: 800;
+    line-height: 1;
+  }
+  .metric .small {
+    font-size: 7px;
+    color: #b9d4f3;
+    margin-top: 4px;
+    font-weight: 700;
+  }
+  .bars .row {
+    display: grid;
+    grid-template-columns: 78px 1fr 32px;
+    gap: 6px;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+  .bar-bg {
+    height: 10px;
+    background: #e5edf7;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .bar-fill {
+    height: 100%;
+    background: #dc2626;
+    border-radius: 2px;
+  }
+  .bar-fill.orange { background: #d97706; }
+  .bar-fill.teal { background: #0e7490; }
+  .bar-fill.green { background: #15803d; }
+  .chart {
+    height: 178px;
+    border: 1px solid #d8e5f5;
+    background:
+      linear-gradient(to top, rgba(15,35,77,0.07) 1px, transparent 1px) 0 0 / 100% 32px,
+      #ffffff;
+    padding: 14px 12px 10px;
+    display: flex;
+    align-items: end;
+    justify-content: space-around;
+  }
+  .group {
+    width: 54px;
+    display: flex;
+    gap: 4px;
+    align-items: end;
+    justify-content: center;
+    position: relative;
+  }
+  .group:after {
+    content: attr(data-label);
+    position: absolute;
+    bottom: -12px;
+    width: 70px;
+    text-align: center;
+    font-size: 6.5px;
+    color: #475569;
+  }
+  .barc {
+    width: 9px;
+    border-radius: 2px 2px 0 0;
+  }
+  .b1 { background: #2563eb; }
+  .b2 { background: #d97706; }
+  .b3 { background: #15803d; }
+  .b4 { background: #dc2626; }
+  .legend {
+    margin-top: 13px;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    font-size: 7px;
+  }
+  .key {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-right: 3px;
+    border-radius: 2px;
+  }
+  .conclusion {
+    background: #081b3f;
+    color: #ffffff;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 18px;
+    padding: 12px 20px;
+  }
+  .conclusion h2 {
+    margin: 0 0 8px;
+    font-size: 16px;
+    font-family: Georgia, "Times New Roman", serif;
+  }
+  .conclusion p {
+    margin: 0 0 7px;
+    font-size: 11px;
+    line-height: 1.35;
+    font-weight: 700;
+  }
+  .outcomes {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px;
+  }
+  .outcome {
+    border: 1px solid rgba(255,255,255,0.28);
+    background: rgba(255,255,255,0.08);
+    border-radius: 5px;
+    text-align: center;
+    padding: 6px 4px;
+  }
+  .outcome b {
+    display: block;
+    font-size: 8px;
+    color: #ffffff;
+  }
+  .outcome span {
+    display: block;
+    color: #cfe5ff;
+    font-size: 6.5px;
+    margin-top: 2px;
+  }
+  .footer {
+    height: 34px;
+    background: #06142f;
+    color: #d9ebff;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1.1fr;
+    gap: 8px;
+    align-items: center;
+    padding: 0 20px;
+    font-size: 7.5px;
+  }
+  .center { text-align: center; }
+  .right { text-align: right; }
+</style>
+</head>
+<body>
+<main class="poster">
+  <section class="top">
+    <div class="logo-stack">
+      <div class="logo">CIHE<small>Crown Institute</small></div>
+      <div class="logo">AI SECURITY<small>Research Group</small></div>
+    </div>
+    <div class="title-block">
+      <div class="kicker">CIHE SECURE AI PROJECT - MAY 2026</div>
+      <h1>PhishLens: AI-Powered Phishing Email Detection Platform</h1>
+      <div class="subtitle">A secure full-stack web application with explainable ML detection and role-based access control</div>
+      <div class="authors">Tandin Wangyel | Tashi Namgay | Gaki Palden | Melam Rabzang</div>
+      <div class="school">Crown Institute of Higher Education | CIHE240943 | CIHE241207 | CIHE240539 | CIHE240648</div>
+    </div>
+    <div class="score">
+      <div class="label">BEST F1 SCORE</div>
+      <div class="value">98.05%</div>
+      <div class="note">Stacking Random Forest</div>
+    </div>
+  </section>
+
+  <section class="nav">
+    <div>DETECT PHISHING</div>
+    <div>EXPLAIN RISK</div>
+    <div>PROTECT USERS</div>
+    <div>BERT AND DISTILBERT</div>
+    <div>LLAMA MODEL</div>
+    <div>DEVSECOPS ARCHITECTURE</div>
+  </section>
+
+  <section class="abstract">
+    <div class="bar">ABSTRACT</div>
+    <p>PhishLens is a secure full-stack platform that combines AI-assisted phishing email detection, explainable risk outputs, and role-based workflows for users, researchers, and administrators. The system uses React/Vite, Express, MongoDB, and FastAPI ML services. BERT, DistilBERT, and LLaMA models were trained on 18,000 emails and compared with five ensemble methods. The best method, Stacking Random Forest, achieved 98.44% accuracy and an F1 score of 0.9805.</p>
+  </section>
+
+  <section class="grid">
+    <div class="section">
+      <div class="head">INTRODUCTION</div>
+      <div class="body">
+        <ul class="clean">
+          <li>Phishing emails exploit trust, urgency, fear, reward, and familiar brands.</li>
+          <li>Rule-based filters can miss changing wording and new attack patterns.</li>
+          <li>Secure design is needed because predictions, dashboards, and logs contain sensitive information.</li>
+        </ul>
+        <div class="callout">PhishLens combines model evaluation with explainable detection, RBAC, 2FA, dataset workflows, and testing evidence.</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="head teal">OBJECTIVES</div>
+      <div class="body">
+        <ul class="clean">
+          <li>Classify email content and explain suspicious indicators.</li>
+          <li>Train and compare BERT, DistilBERT, and LLaMA on 18,000 emails.</li>
+          <li>Combine models using five ensemble methods.</li>
+          <li>Implement bcrypt, JWT, RBAC, and optional TOTP 2FA security.</li>
+          <li>Support researcher and admin dashboards with activity logging.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="head green">DATASET AND METHODOLOGY</div>
+      <div class="body">
+        <ul class="clean">
+          <li>18,650 Kaggle emails were prepared, with 18,000 used for testing and model work.</li>
+          <li>TF-IDF vectorisation and domain-specific features were engineered.</li>
+          <li>Dataset split: 70% train, 15% validation, and 15% test.</li>
+        </ul>
+        <div class="steps">
+          <div class="step"><div class="num">1</div><b>DATA</b><span>Download and clean</span></div>
+          <div class="step"><div class="num">2</div><b>FEATURES</b><span>TF-IDF plus domain features</span></div>
+          <div class="step"><div class="num">3</div><b>TRAIN</b><span>BERT, DistilBERT, LLaMA</span></div>
+          <div class="step"><div class="num">4</div><b>ENSEMBLE</b><span>Five strategies</span></div>
+          <div class="step"><div class="num">5</div><b>EVALUATE</b><span>Accuracy, F1, precision, recall</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section span2">
+      <div class="head">SECURE SYSTEM ARCHITECTURE</div>
+      <div class="body">
+        <div class="arch">
+          <div class="box"><b>React / Vite</b><span>Detector, auth, dashboards</span></div>
+          <div class="box"><b>Express API</b><span>JWT, RBAC, proxy, JSON responses</span></div>
+          <div class="box"><b>MongoDB</b><span>Users, datasets, predictions, logs</span></div>
+          <div class="box green"><b>FastAPI ML</b><span>Predict, train, ensemble</span></div>
+          <div class="box"><b>Model Files</b><span>PKL files, vectorizers, notebooks, CSV</span></div>
+        </div>
+        <div class="design">Design principle: the browser never calls the ML service directly. Express validates requests, enforces RBAC, stores audit records, and returns JSON-only responses.</div>
+        <div class="split" style="margin-top:8px;">
+          <div class="section" style="border-radius:5px;">
+            <div class="head teal" style="font-size:9px;padding:5px 7px;">SECURITY CONTROLS</div>
+            <div class="body" style="padding:7px;">
+              <ul class="clean">
+                <li>bcrypt password hashing and JWT login</li>
+                <li>TOTP-based optional 2FA setup</li>
+                <li>Role middleware for admin, researcher, and user</li>
+                <li>CSV-only upload and request validation</li>
+                <li>MongoDB operator sanitisation</li>
+              </ul>
+            </div>
+          </div>
+          <div class="section" style="border-radius:5px;">
+            <div class="head green" style="font-size:9px;padding:5px 7px;">ROLE DASHBOARDS</div>
+            <div class="body" style="padding:7px;">
+              <ul class="clean">
+                <li>User: submit emails and view predictions.</li>
+                <li>Researcher: upload CSV datasets and compare model metrics.</li>
+                <li>Admin: approve users, assign roles, and view platform logs.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="head red">HOW PHISHLENS IDENTIFIES PHISHING</div>
+      <div class="body">
+        <p style="margin:0 0 7px;">Suspicious keyword analysis on 18,000 emails:</p>
+        <div class="bars">
+          <div class="row"><span>Reward / Greed</span><div class="bar-bg"><div class="bar-fill" style="width:100%;"></div></div><b>2972</b></div>
+          <div class="row"><span>Authority</span><div class="bar-bg"><div class="bar-fill orange" style="width:53%;"></div></div><b>1589</b></div>
+          <div class="row"><span>Action Demand</span><div class="bar-bg"><div class="bar-fill teal" style="width:39%;"></div></div><b>1153</b></div>
+          <div class="row"><span>Time Pressure</span><div class="bar-bg"><div class="bar-fill teal" style="width:24%;"></div></div><b>707</b></div>
+          <div class="row"><span>Threat / Fear</span><div class="bar-bg"><div class="bar-fill green" style="width:6%;"></div></div><b>177</b></div>
+        </div>
+        <div class="split" style="gap:6px;margin-top:10px;">
+          <div class="callout" style="text-align:center;margin:0;"><b style="font-size:16px;">0.58</b><br>Legitimate urgency</div>
+          <div class="callout" style="text-align:center;margin:0;background:#fee2e2;border-color:#fecaca;"><b style="font-size:16px;color:#dc2626;">0.90</b><br>Phishing urgency</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="head">INDIVIDUAL MODEL RESULTS</div>
+      <div class="body">
+        <table>
+          <thead><tr><th>Model</th><th>Acc</th><th>Prec</th><th>Recall</th><th>F1</th></tr></thead>
+          <tbody>
+            <tr><td>BERT</td><td>97.74%</td><td>95.86%</td><td>98.49%</td><td>97.15%</td></tr>
+            <tr><td>DistilBERT</td><td>97.70%</td><td>95.95%</td><td>98.30%</td><td>97.11%</td></tr>
+            <tr class="best"><td>LLaMA</td><td>98.07%</td><td>96.50%</td><td>98.68%</td><td>97.58%</td></tr>
+          </tbody>
+        </table>
+        <div class="mini-metrics">
+          <div class="metric"><div class="big">5</div><div class="small">EPOCHS</div></div>
+          <div class="metric"><div class="big">18k</div><div class="small">EMAILS</div></div>
+          <div class="metric"><div class="big">LLaMA</div><div class="small">BEST SINGLE MODEL</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="head green">ENSEMBLE METHOD RESULTS</div>
+      <div class="body">
+        <table>
+          <thead><tr><th>Method</th><th>Acc</th><th>F1</th></tr></thead>
+          <tbody>
+            <tr><td>Hard Voting</td><td>98.04%</td><td>97.53%</td></tr>
+            <tr><td>Soft Voting</td><td>98.04%</td><td>97.53%</td></tr>
+            <tr><td>Weighted Voting</td><td>98.04%</td><td>97.53%</td></tr>
+            <tr><td>Stacking LR</td><td>98.11%</td><td>97.62%</td></tr>
+            <tr class="best"><td>Stacking RF</td><td>98.44%</td><td>98.05%</td></tr>
+          </tbody>
+        </table>
+        <div class="callout">Best method: Stacking Random Forest achieved the highest F1 score of 0.9805 with precision 96.70% and recall 99.43%.</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="head orange">PERFORMANCE AND TESTING</div>
+      <div class="body">
+        <ul class="clean">
+          <li>22 of 22 unit tests passed for auth, register, login, JWT, and prediction flow.</li>
+          <li>Locust load testing showed 0% failure under 50 users.</li>
+          <li>OWASP ZAP scanning and activity logs support security validation.</li>
+          <li>Prediction history and dataset metadata support auditability.</li>
+        </ul>
+        <div class="mini-metrics">
+          <div class="metric"><div class="big">22/22</div><div class="small">TESTS PASSED</div></div>
+          <div class="metric"><div class="big">0%</div><div class="small">LOAD FAILURES</div></div>
+          <div class="metric"><div class="big">100+</div><div class="small">LOG ENTRIES</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section span3 conclusion">
+      <div>
+        <h2>CONCLUSION AND FUTURE WORK</h2>
+        <p>PhishLens demonstrates a complete academic secure AI prototype: model comparison, ensemble learning, explainable prediction, secure role-based workflows, and repeatable testing evidence.</p>
+        <p>Future work includes production BERT and DistilBERT weights, SPF and DKIM intelligence, Docker Compose, CI/CD scanning, refresh tokens, password reset, and monitoring.</p>
+      </div>
+      <div class="outcomes">
+        <div class="outcome"><b>SECURE</b><span>JWT, RBAC, 2FA</span></div>
+        <div class="outcome"><b>INTELLIGENT</b><span>3 models, 5 ensembles</span></div>
+        <div class="outcome"><b>EXPLAINABLE</b><span>Indicators and confidence</span></div>
+        <div class="outcome"><b>RESEARCH READY</b><span>CSV upload and training</span></div>
+        <div class="outcome"><b>VALIDATED</b><span>Tests, Locust, ZAP</span></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div><b>PhishLens</b> | CIHE Secure AI Phishing Email Detection Project | May 2026</div>
+    <div class="center">Detect threats. Explain risk. Protect users.</div>
+    <div class="right">Supervised by Md. Ashraf Uddin | ashraf.uddin@cihe.edu.au</div>
+  </footer>
+</main>
+</body>
+</html>

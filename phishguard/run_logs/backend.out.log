@@ -1,4 +1,0 @@
-[DB] Connected to MongoDB Atlas
-[DB] MongoDB ready - collections and indexes set
-[APP] PhishGuard API v3.0 started successfully
-INFO:     127.0.0.1:64426 - "GET / HTTP/1.1" 200 OK
