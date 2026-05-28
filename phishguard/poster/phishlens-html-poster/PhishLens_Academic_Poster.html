@@ -1,0 +1,1163 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PhishLens Academic Poster</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Source+Sans+3:wght@300;400;600;700&family=Source+Code+Pro:wght@500&display=swap');
+
+  :root {
+    --navy: #0d1b3e;
+    --blue: #1a3a8f;
+    --accent: #2563eb;
+    --light-blue: #dbeafe;
+    --teal: #0e7490;
+    --green: #15803d;
+    --red: #dc2626;
+    --amber: #d97706;
+    --white: #ffffff;
+    --gray-50: #f8fafc;
+    --gray-100: #f1f5f9;
+    --gray-200: #e2e8f0;
+    --gray-600: #475569;
+    --gray-700: #334155;
+    --text: #1e293b;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    background: white;
+    color: var(--text);
+    font-size: 11px;
+    line-height: 1.4;
+  }
+
+  .poster {
+    width: 841px;
+    min-height: 1189px;
+    margin: 0 auto;
+    background: white;
+    padding: 0;
+  }
+
+  /* HEADER */
+  .header {
+    background: var(--navy);
+    color: white;
+    padding: 18px 28px 14px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+
+  .header-logos {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: center;
+    min-width: 80px;
+  }
+
+  .logo-box {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    color: #93c5fd;
+    letter-spacing: 0.05em;
+    text-align: center;
+  }
+
+  .logo-box span {
+    display: block;
+    font-size: 9px;
+    color: rgba(255,255,255,0.5);
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 300;
+    margin-top: 1px;
+  }
+
+  .header-center {
+    flex: 1;
+    text-align: center;
+  }
+
+  .project-label {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    color: #93c5fd;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .poster-title {
+    font-family: 'Merriweather', serif;
+    font-size: 22px;
+    font-weight: 900;
+    color: white;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 5px;
+  }
+
+  .poster-subtitle {
+    font-size: 11px;
+    color: #bfdbfe;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    margin-bottom: 8px;
+  }
+
+  .authors {
+    font-size: 10.5px;
+    color: #e0f2fe;
+    font-weight: 600;
+    margin-bottom: 3px;
+  }
+
+  .affiliation {
+    font-size: 9.5px;
+    color: rgba(255,255,255,0.55);
+    font-weight: 300;
+  }
+
+  .header-right {
+    min-width: 90px;
+    text-align: right;
+  }
+
+  .badge {
+    background: #2563eb;
+    border: 1px solid #3b82f6;
+    border-radius: 6px;
+    padding: 6px 10px;
+    text-align: center;
+  }
+
+  .badge-label {
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #93c5fd;
+    margin-bottom: 2px;
+  }
+
+  .badge-value {
+    font-family: 'Merriweather', serif;
+    font-size: 18px;
+    font-weight: 900;
+    color: white;
+    line-height: 1;
+  }
+
+  .badge-unit {
+    font-size: 9px;
+    color: #bfdbfe;
+  }
+
+  /* TAGLINE STRIP */
+  .tagline-strip {
+    background: var(--accent);
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 6px 28px;
+  }
+
+  .tagline-item {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .tagline-item::before {
+    content: 'â—';
+    font-size: 6px;
+    opacity: 0.7;
+  }
+
+  /* MAIN CONTENT */
+  .content {
+    padding: 12px 18px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+  }
+
+  /* SECTION BOXES */
+  .section {
+    background: var(--gray-50);
+    border: 1px solid var(--gray-200);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .section-header {
+    background: var(--navy);
+    color: white;
+    padding: 5px 10px;
+    font-family: 'Merriweather', serif;
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .section-header.blue { background: var(--blue); }
+  .section-header.teal { background: var(--teal); }
+  .section-header.green { background: var(--green); }
+  .section-header.red { background: var(--red); }
+  .section-header.amber { background: var(--amber); }
+  .section-header.accent { background: var(--accent); }
+
+  .section-body {
+    padding: 8px 10px;
+  }
+
+  /* SPAN classes */
+  .span-2 { grid-column: span 2; }
+  .span-3 { grid-column: span 3; }
+
+  /* ABSTRACT */
+  .abstract-text {
+    font-size: 10.5px;
+    line-height: 1.55;
+    color: var(--gray-700);
+    font-style: italic;
+    border-left: 3px solid var(--accent);
+    padding-left: 8px;
+    background: white;
+    padding: 6px 8px;
+    border-radius: 0 4px 4px 0;
+  }
+
+  /* BULLET LISTS */
+  .blist {
+    list-style: none;
+    padding: 0;
+  }
+
+  .blist li {
+    font-size: 10px;
+    padding: 2.5px 0;
+    padding-left: 14px;
+    position: relative;
+    color: var(--gray-700);
+    line-height: 1.4;
+  }
+
+  .blist li::before {
+    content: 'â–';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 7px;
+    top: 4px;
+  }
+
+  /* METRICS ROW */
+  .metrics-row {
+    display: flex;
+    gap: 6px;
+    margin: 6px 0;
+  }
+
+  .metric-card {
+    flex: 1;
+    background: var(--navy);
+    border-radius: 5px;
+    padding: 6px 4px;
+    text-align: center;
+    color: white;
+  }
+
+  .metric-value {
+    font-family: 'Merriweather', serif;
+    font-size: 16px;
+    font-weight: 900;
+    line-height: 1;
+    color: #93c5fd;
+  }
+
+  .metric-label {
+    font-size: 7.5px;
+    color: rgba(255,255,255,0.65);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 2px;
+    line-height: 1.2;
+  }
+
+  .metric-card.green .metric-value { color: #86efac; }
+  .metric-card.amber .metric-value { color: #fde68a; }
+  .metric-card.teal .metric-value { color: #a5f3fc; }
+
+  /* ARCHITECTURE FLOW */
+  .arch-flow {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-wrap: nowrap;
+    margin: 6px 0;
+    overflow: hidden;
+  }
+
+  .arch-box {
+    flex: 1;
+    background: var(--navy);
+    color: white;
+    border-radius: 4px;
+    padding: 5px 4px;
+    text-align: center;
+    font-size: 8px;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  .arch-box .arch-sub {
+    font-size: 7px;
+    color: #93c5fd;
+    font-weight: 400;
+    margin-top: 1px;
+  }
+
+  .arch-arrow {
+    color: var(--accent);
+    font-size: 12px;
+    flex-shrink: 0;
+  }
+
+  /* TWO-COLUMN IN SECTION */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .mini-section {
+    background: white;
+    border: 1px solid var(--gray-200);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .mini-header {
+    background: var(--accent);
+    color: white;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 3px 7px;
+  }
+
+  .mini-header.green { background: var(--green); }
+  .mini-header.teal { background: var(--teal); }
+  .mini-header.red { background: var(--red); }
+  .mini-header.amber { background: var(--amber); }
+
+  .mini-body {
+    padding: 5px 7px;
+  }
+
+  /* MODEL TABLE */
+  .model-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 9px;
+    margin-top: 4px;
+  }
+
+  .model-table th {
+    background: var(--navy);
+    color: white;
+    padding: 3px 5px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 8px;
+    letter-spacing: 0.05em;
+  }
+
+  .model-table td {
+    padding: 3px 5px;
+    border-bottom: 1px solid var(--gray-200);
+    color: var(--gray-700);
+  }
+
+  .model-table tr:nth-child(even) td { background: var(--gray-50); }
+  .model-table tr.best-row td { background: #dbeafe; font-weight: 700; color: var(--navy); }
+
+  .score-badge {
+    background: var(--navy);
+    color: #86efac;
+    border-radius: 3px;
+    padding: 1px 4px;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 8.5px;
+    font-weight: 600;
+  }
+
+  .score-badge.best { background: var(--green); color: white; }
+
+  /* STEP FLOW (methodology) */
+  .step-flow {
+    display: flex;
+    gap: 4px;
+    margin: 6px 0;
+  }
+
+  .step {
+    flex: 1;
+    background: white;
+    border: 1px solid var(--gray-200);
+    border-radius: 4px;
+    padding: 5px 4px;
+    text-align: center;
+  }
+
+  .step-num {
+    width: 18px;
+    height: 18px;
+    background: var(--accent);
+    color: white;
+    border-radius: 50%;
+    font-size: 9px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 4px;
+  }
+
+  .step-title {
+    font-size: 8px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 2px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .step-desc {
+    font-size: 7.5px;
+    color: var(--gray-600);
+    line-height: 1.3;
+  }
+
+  /* SECURITY TABLE */
+  .sec-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 9px;
+  }
+
+  .sec-table th {
+    background: var(--teal);
+    color: white;
+    padding: 3px 6px;
+    text-align: left;
+    font-size: 8px;
+    font-weight: 700;
+  }
+
+  .sec-table td {
+    padding: 2.5px 6px;
+    border-bottom: 1px solid var(--gray-200);
+    vertical-align: top;
+    line-height: 1.3;
+  }
+
+  .sec-table tr:nth-child(even) td { background: var(--gray-50); }
+
+  .req-label {
+    font-weight: 700;
+    color: var(--navy);
+    white-space: nowrap;
+    font-size: 8.5px;
+  }
+
+  .ctrl-text {
+    color: var(--gray-600);
+    font-size: 8.5px;
+  }
+
+  /* BAR CHART */
+  .bar-chart {
+    margin: 6px 0;
+  }
+
+  .bar-row {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 4px;
+  }
+
+  .bar-label {
+    font-size: 8.5px;
+    color: var(--gray-700);
+    min-width: 90px;
+    font-weight: 600;
+  }
+
+  .bar-track {
+    flex: 1;
+    background: var(--gray-200);
+    border-radius: 3px;
+    height: 10px;
+    overflow: hidden;
+  }
+
+  .bar-fill {
+    height: 100%;
+    border-radius: 3px;
+    background: var(--accent);
+    transition: width 0s;
+  }
+
+  .bar-fill.green { background: var(--green); }
+  .bar-fill.teal { background: var(--teal); }
+  .bar-fill.amber { background: var(--amber); }
+  .bar-fill.red { background: var(--red); }
+
+  .bar-val {
+    font-size: 8.5px;
+    font-weight: 700;
+    color: var(--navy);
+    min-width: 34px;
+    text-align: right;
+    font-family: 'Source Code Pro', monospace;
+  }
+
+  /* CONCLUSION */
+  .conclusion-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 5px;
+    margin: 6px 0;
+  }
+
+  .concl-item {
+    background: var(--navy);
+    border-radius: 5px;
+    padding: 6px 5px;
+    text-align: center;
+    color: white;
+  }
+
+  .concl-icon {
+    font-size: 14px;
+    margin-bottom: 3px;
+  }
+
+  .concl-label {
+    font-size: 8px;
+    font-weight: 700;
+    color: #93c5fd;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 2px;
+  }
+
+  .concl-desc {
+    font-size: 7.5px;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.3;
+  }
+
+  /* FOOTER */
+  .footer {
+    background: var(--navy);
+    color: rgba(255,255,255,0.6);
+    padding: 7px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 8.5px;
+    margin-top: 4px;
+  }
+
+  .footer strong { color: white; }
+
+  /* HIGHLIGHT BOX */
+  .highlight-box {
+    background: var(--light-blue);
+    border: 1px solid #bfdbfe;
+    border-left: 3px solid var(--accent);
+    border-radius: 4px;
+    padding: 5px 8px;
+    font-size: 9.5px;
+    color: var(--navy);
+    margin: 5px 0;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  /* INLINE CODE */
+  code {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 8.5px;
+    background: var(--gray-100);
+    padding: 1px 3px;
+    border-radius: 2px;
+    color: var(--teal);
+  }
+
+  /* DIVIDER */
+  .divider {
+    height: 1px;
+    background: var(--gray-200);
+    margin: 5px 0;
+  }
+
+  .contact-row {
+    display: flex;
+    gap: 8px;
+    margin-top: 5px;
+    flex-wrap: wrap;
+  }
+
+  .contact-item {
+    font-size: 9px;
+    color: var(--gray-600);
+  }
+
+  .contact-item strong { color: var(--navy); }
+
+  .result-highlight {
+    font-family: 'Merriweather', serif;
+    font-size: 12px;
+    font-weight: 900;
+    color: var(--green);
+  }
+
+  /* small tag */
+  .tag {
+    display: inline-block;
+    background: var(--light-blue);
+    color: var(--blue);
+    border-radius: 3px;
+    padding: 1px 5px;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin: 1px 1px;
+  }
+
+  .tag.green { background: #dcfce7; color: var(--green); }
+  .tag.amber { background: #fef3c7; color: #92400e; }
+  .tag.red { background: #fee2e2; color: #991b1b; }
+</style>
+<style id="codex-print-fix">
+  @page { size: 841px 1189px; margin: 0; }
+  @media print {
+    html, body { width: 841px; height: 1189px; margin: 0 !important; background: white !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .poster { width: 841px !important; min-height: 1189px !important; margin: 0 !important; box-shadow: none !important; }
+  }
+</style>
+</head>
+<body>
+<div class="poster">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-logos">
+      <div class="logo-box">CIHE<span>Crown Institute</span></div>
+      <div class="logo-box" style="background:rgba(37,99,235,0.3);border-color:#3b82f6;color:#bfdbfe;font-size:9px;">AI &amp; Security<span>Research Group</span></div>
+    </div>
+
+    <div class="header-center">
+      <div class="project-label">CIHE Secure AI Project Â· May 2026</div>
+      <div class="poster-title">PhishLens: AI-Powered Phishing Email Detection Platform</div>
+      <div class="poster-subtitle">A Secure Full-Stack Web Application with Explainable ML Detection and Role-Based Access Control</div>
+      <div class="authors">Tandin Wangyel &nbsp;Â·&nbsp; Tashi Namgay &nbsp;Â·&nbsp; Gaki Palden &nbsp;Â·&nbsp; Melam Rabzang</div>
+      <div class="affiliation">Crown Institute of Higher Education &nbsp;|&nbsp; CIHE240943 Â· CIHE241207 Â· CIHE240539 Â· CIHE240648</div>
+    </div>
+
+    <div class="header-right">
+      <div class="badge">
+        <div class="badge-label">Best F1-Score</div>
+        <div class="badge-value">98.05<span style="font-size:11px">%</span></div>
+        <div class="badge-unit">Stacking â€“ Random Forest</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAGLINE STRIP -->
+  <div class="tagline-strip">
+    <div class="tagline-item">Detect Phishing</div>
+    <div class="tagline-item">Explain Risk Indicators</div>
+    <div class="tagline-item">Protect Users</div>
+    <div class="tagline-item">Ensemble ML (BERT Â· DistilBERT Â· LLaMA)</div>
+    <div class="tagline-item">Secure DevSecOps Architecture</div>
+  </div>
+
+  <!-- CONTENT GRID -->
+  <div class="content">
+
+    <!-- ROW 1 -->
+
+    <!-- Abstract -->
+    <div class="section span-3">
+      <div class="section-header accent">Abstract</div>
+      <div class="section-body">
+        <p class="abstract-text">PhishLens is a secure full-stack web platform that integrates AI-assisted phishing email detection, explainable risk outputs, and role-based workflows for users, researchers, and administrators. Built using Agile + DevSecOps methodology, the system combines a React/Vite frontend, Express backend API, MongoDB persistence, and a FastAPI ML service. Three transformer-based models â€” BERT, DistilBERT, and LLaMA â€” were trained on 18,000 emails and evaluated both individually and through five ensemble techniques. The best method, Stacking with Random Forest, achieved <strong>98.44% accuracy</strong> and <strong>F1-score of 0.9805</strong>. The platform provides confidence scores, suspicious indicator explanations, RBAC dashboards, dataset upload/training workflows, 2FA security, and comprehensive testing evidence.</p>
+      </div>
+    </div>
+
+    <!-- Introduction -->
+    <div class="section">
+      <div class="section-header blue">Introduction</div>
+      <div class="section-body">
+        <ul class="blist">
+          <li>Phishing emails exploit <strong>human psychology</strong> using urgency, impersonation, and fake authority to steal credentials</li>
+          <li>Attack wording evolves constantly, making rule-based filters insufficient</li>
+          <li>AI and transformer models learn language patterns that generalise to novel attacks</li>
+          <li>Secure design is essential: platforms storing accounts and ML predictions must enforce authentication, access control, and audit trails from the start</li>
+        </ul>
+        <div class="highlight-box">Many existing projects stop at model evaluation. PhishLens integrates explainable detection, RBAC, 2FA, dataset workflows, and testing evidence into a single deployable system.</div>
+      </div>
+    </div>
+
+    <!-- Objectives -->
+    <div class="section">
+      <div class="section-header teal">Objectives</div>
+      <div class="section-body">
+        <ul class="blist">
+          <li>Design a <strong>secure AI-assisted platform</strong> that classifies email content and explains suspicious indicators</li>
+          <li>Train and compare <strong>BERT, DistilBERT, and LLaMA</strong> models on 18,000 labelled emails</li>
+          <li>Combine models using <strong>5 ensemble techniques</strong>: Hard Voting, Soft Voting, Weighted Voting, Stackingâ€“LR, Stackingâ€“RF</li>
+          <li>Implement <strong>bcrypt + JWT + RBAC + TOTP 2FA</strong> security controls</li>
+          <li>Provide researcher and admin <strong>role-specific dashboards</strong> with activity logging</li>
+          <li>Validate with unit tests, Locust load testing, and OWASP ZAP security scanning</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Dataset & Methodology -->
+    <div class="section">
+      <div class="section-header green">Dataset &amp; Methodology</div>
+      <div class="section-body">
+        <ul class="blist">
+          <li><strong>18,000 emails</strong> from Kaggle dataset (18,650 total); labelled Safe / Phishing</li>
+          <li>TF-IDF vectorisation + domain-specific features (URL count, uppercase ratio, suspicious keyword count)</li>
+          <li>Split: <strong>70% train / 15% validation / 15% test</strong></li>
+        </ul>
+        <div class="step-flow" style="margin-top:6px;">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-title">Data</div>
+            <div class="step-desc">Download &amp; clean 18k emails</div>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-title">Features</div>
+            <div class="step-desc">TF-IDF + domain features</div>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-title">Train</div>
+            <div class="step-desc">BERT / DistilBERT / LLaMA</div>
+          </div>
+          <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-title">Ensemble</div>
+            <div class="step-desc">5 combination strategies</div>
+          </div>
+          <div class="step">
+            <div class="step-num">5</div>
+            <div class="step-title">Evaluate</div>
+            <div class="step-desc">Accuracy, F1, Precision, Recall</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ROW 2 -->
+
+    <!-- System Architecture -->
+    <div class="section span-2">
+      <div class="section-header accent">Secure System Architecture</div>
+      <div class="section-body">
+        <div class="arch-flow">
+          <div class="arch-box" style="background:#1e3a8a;">React / Vite<div class="arch-sub">Frontend<br>Detector Â· Auth Â· Dashboards</div></div>
+          <div class="arch-arrow">â†’</div>
+          <div class="arch-box" style="background:#1d4ed8;">Express API<div class="arch-sub">JWT Â· RBAC Â· Proxy<br>JSON-only responses</div></div>
+          <div class="arch-arrow">â†’</div>
+          <div class="arch-box" style="background:#0e7490;">MongoDB<div class="arch-sub">Users Â· Datasets<br>Predictions Â· Logs</div></div>
+          <div class="arch-arrow">â†•</div>
+          <div class="arch-box" style="background:#15803d;">FastAPI<div class="arch-sub">ML Service<br>Predict Â· Train Â· Ensemble</div></div>
+          <div class="arch-arrow">â†’</div>
+          <div class="arch-box" style="background:#0d1b3e;">Model Files<div class="arch-sub">pkl Â· vectorizers<br>notebooks Â· CSV</div></div>
+        </div>
+        <div class="highlight-box" style="margin-top:4px;">Design principle: the browser never calls the ML service directly. The Express backend validates every request, enforces RBAC, stores audit records, and returns JSON-only responses.</div>
+        <div class="two-col" style="margin-top:6px;">
+          <div class="mini-section">
+            <div class="mini-header teal">Security Controls</div>
+            <div class="mini-body">
+              <ul class="blist">
+                <li>bcrypt password hashing + JWT login</li>
+                <li>TOTP-based optional 2FA (QR code setup)</li>
+                <li>Role middleware: admin / researcher / user</li>
+                <li>CSV-only upload + Pydantic validation</li>
+                <li>MongoDB operator sanitisation</li>
+                <li>Prediction history &amp; activity logs</li>
+              </ul>
+            </div>
+          </div>
+          <div class="mini-section">
+            <div class="mini-header green">Role Dashboards</div>
+            <div class="mini-body">
+              <ul class="blist">
+                <li><strong>User:</strong> submit emails, view predictions &amp; explanations</li>
+                <li><strong>Researcher:</strong> upload CSV datasets, trigger training, view model metrics &amp; confusion matrix</li>
+                <li><strong>Admin:</strong> approve/suspend accounts, assign roles, view activity logs &amp; platform stats</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phishing Detection -->
+    <div class="section">
+      <div class="section-header red">How PhishLens Identifies Phishing</div>
+      <div class="section-body">
+        <p style="font-size:9.5px;color:var(--gray-600);margin-bottom:5px;font-weight:600;">Suspicious keyword analysis on 18,000 emails:</p>
+        <div class="bar-chart">
+          <div class="bar-row">
+            <div class="bar-label">Reward / Greed</div>
+            <div class="bar-track"><div class="bar-fill red" style="width:100%;"></div></div>
+            <div class="bar-val">2,972</div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">Authority</div>
+            <div class="bar-track"><div class="bar-fill amber" style="width:53%;"></div></div>
+            <div class="bar-val">1,589</div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">Action Demand</div>
+            <div class="bar-track"><div class="bar-fill" style="width:39%;"></div></div>
+            <div class="bar-val">1,153</div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">Time Pressure</div>
+            <div class="bar-track"><div class="bar-fill teal" style="width:24%;"></div></div>
+            <div class="bar-val">707</div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">Threat / Fear</div>
+            <div class="bar-track"><div class="bar-fill green" style="width:6%;"></div></div>
+            <div class="bar-val">177</div>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <p style="font-size:9px;color:var(--gray-600);margin-bottom:3px;"><strong>Average urgency score:</strong></p>
+        <div style="display:flex;gap:8px;margin-top:3px;">
+          <div style="flex:1;background:var(--gray-100);border-radius:4px;padding:5px;text-align:center;">
+            <div style="font-size:16px;font-weight:900;color:var(--blue);font-family:'Merriweather',serif;">0.58</div>
+            <div style="font-size:8px;color:var(--gray-600);">Legitimate</div>
+          </div>
+          <div style="flex:1;background:#fee2e2;border-radius:4px;padding:5px;text-align:center;">
+            <div style="font-size:16px;font-weight:900;color:var(--red);font-family:'Merriweather',serif;">0.90</div>
+            <div style="font-size:8px;color:#991b1b;font-weight:700;">Phishing</div>
+          </div>
+        </div>
+        <p style="font-size:8.5px;color:var(--gray-600);margin-top:4px;">Keywords: <span class="tag red">click</span><span class="tag red">password</span><span class="tag amber">account</span><span class="tag amber">login</span><span class="tag">verify</span><span class="tag">security</span><span class="tag green">bank</span></p>
+      </div>
+    </div>
+
+    <!-- ROW 3 -->
+
+    <!-- Model Results -->
+    <div class="section">
+      <div class="section-header blue">Individual Model Results</div>
+      <div class="section-body">
+        <p style="font-size:9px;color:var(--gray-600);margin-bottom:5px;">Trained on 18,000 emails Â· 5 epochs each:</p>
+        <table class="model-table">
+          <thead>
+            <tr><th>Model</th><th>Acc</th><th>Prec</th><th>Recall</th><th>F1</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="font-weight:700;color:var(--navy);">BERT</td>
+              <td><span class="score-badge">97.74%</span></td>
+              <td>95.86%</td>
+              <td>98.49%</td>
+              <td>97.15%</td>
+            </tr>
+            <tr>
+              <td style="font-weight:700;color:var(--navy);">DistilBERT</td>
+              <td><span class="score-badge">97.70%</span></td>
+              <td>95.95%</td>
+              <td>98.30%</td>
+              <td>97.11%</td>
+            </tr>
+            <tr>
+              <td style="font-weight:700;color:var(--navy);">LLaMA</td>
+              <td><span class="score-badge">98.07%</span></td>
+              <td>96.50%</td>
+              <td>98.68%</td>
+              <td>97.58%</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="metrics-row" style="margin-top:6px;">
+          <div class="metric-card">
+            <div class="metric-value">5</div>
+            <div class="metric-label">Epochs<br>each model</div>
+          </div>
+          <div class="metric-card green">
+            <div class="metric-value">18k</div>
+            <div class="metric-label">Emails<br>trained</div>
+          </div>
+          <div class="metric-card amber">
+            <div class="metric-value">LLaMA</div>
+            <div class="metric-label">Best<br>individual</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ensemble Results -->
+    <div class="section">
+      <div class="section-header green">Ensemble Method Results</div>
+      <div class="section-body">
+        <table class="model-table">
+          <thead>
+            <tr><th>Ensemble Method</th><th>Acc</th><th>F1</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Hard Voting</td>
+              <td>98.04%</td>
+              <td>97.53%</td>
+            </tr>
+            <tr>
+              <td>Soft Voting</td>
+              <td>98.04%</td>
+              <td>97.53%</td>
+            </tr>
+            <tr>
+              <td>Weighted Voting</td>
+              <td>98.04%</td>
+              <td>97.53%</td>
+            </tr>
+            <tr>
+              <td>Stacking â€“ LR</td>
+              <td>98.11%</td>
+              <td>97.62%</td>
+            </tr>
+            <tr class="best-row">
+              <td>â­ Stacking â€“ RF</td>
+              <td><span class="score-badge best">98.44%</span></td>
+              <td><span class="score-badge best">98.05%</span></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="highlight-box" style="margin-top:5px;">Best Method: <strong>Stacking â€“ Random Forest</strong> achieved the highest F1-Score of <span class="result-highlight">0.9805</span> with Precision 96.70% and Recall 99.43%</div>
+      </div>
+    </div>
+
+    <!-- Performance & Testing -->
+    <div class="section">
+      <div class="section-header amber">Performance &amp; Testing</div>
+      <div class="section-body">
+        <div class="two-col" style="gap:5px;">
+          <div>
+            <p style="font-size:8.5px;font-weight:700;color:var(--navy);margin-bottom:3px;">Locust Load Test (50 users):</p>
+            <ul class="blist">
+              <li>POST /predict (Phishing): <strong>~11ms</strong> median</li>
+              <li>POST /predict (Safe): <strong>~11ms</strong> median</li>
+              <li>34,263 phishing requests: <strong>0% failure</strong></li>
+              <li>34,126 safe requests: <strong>0% failure</strong></li>
+              <li>GET /datasets/all: 1,200ms avg (large payload)</li>
+            </ul>
+          </div>
+          <div>
+            <p style="font-size:8.5px;font-weight:700;color:var(--navy);margin-bottom:3px;">Unit Testing (pytest):</p>
+            <ul class="blist">
+              <li><strong>22/22 tests passed</strong> (100%)</li>
+              <li>Auth: register, login, JWT, 2FA</li>
+              <li>RBAC: admin/researcher route protection</li>
+              <li>ML: predict phishing/safe, batch, risk level</li>
+              <li>Security: invalid token, short password</li>
+            </ul>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <p style="font-size:8.5px;font-weight:700;color:var(--navy);margin-bottom:2px;">OWASP ZAP Security Scan (alerts identified):</p>
+        <div style="display:flex;flex-wrap:wrap;gap:3px;margin-top:2px;">
+          <span class="tag amber">CSP Header Missing</span>
+          <span class="tag amber">Anti-clickjacking Header</span>
+          <span class="tag">Sub-resource Integrity</span>
+          <span class="tag">Content-Type Options</span>
+          <span class="tag green">No Critical Vulnerabilities</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ROW 4 -->
+
+    <!-- Proposed Structure / Architecture Details -->
+    <div class="section">
+      <div class="section-header teal">Platform Components</div>
+      <div class="section-body">
+        <div class="two-col">
+          <div>
+            <p style="font-size:8.5px;font-weight:700;color:var(--navy);margin-bottom:3px;">Frontend (React/Vite):</p>
+            <ul class="blist">
+              <li>Email detector with model selector</li>
+              <li>Confidence + indicator explanation output</li>
+              <li>Gemini-fallback plain-language reasoning</li>
+              <li>Role-specific dashboards (user/researcher/admin)</li>
+            </ul>
+          </div>
+          <div>
+            <p style="font-size:8.5px;font-weight:700;color:var(--navy);margin-bottom:3px;">ML Service (FastAPI):</p>
+            <ul class="blist">
+              <li>Single-model prediction: BERT, DistilBERT, LLaMA</li>
+              <li>Ensemble: voting + stacking methods</li>
+              <li>CSV dataset upload â†’ preprocessing â†’ training</li>
+              <li>Fallback scoring when weights absent</li>
+            </ul>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <p style="font-size:8.5px;font-weight:700;color:var(--navy);margin-bottom:3px;">2FA Workflow:</p>
+        <div style="display:flex;gap:3px;align-items:center;flex-wrap:wrap;">
+          <span class="tag">Enable TOTP</span>
+          <span style="color:var(--gray-600);font-size:10px;">â†’</span>
+          <span class="tag">Scan QR</span>
+          <span style="color:var(--gray-600);font-size:10px;">â†’</span>
+          <span class="tag">Verify OTP</span>
+          <span style="color:var(--gray-600);font-size:10px;">â†’</span>
+          <span class="tag green">Login (Password + OTP)</span>
+          <span style="color:var(--gray-600);font-size:10px;">â†’</span>
+          <span class="tag green">JWT Issued</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Security Controls Table -->
+    <div class="section">
+      <div class="section-header red">Security Requirements &amp; Controls</div>
+      <div class="section-body">
+        <table class="sec-table">
+          <thead>
+            <tr><th>Requirement</th><th>Implemented Control</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="req-label">Authentication</td>
+              <td class="ctrl-text">bcrypt hashing Â· JWT Â· account status Â· optional TOTP 2FA</td>
+            </tr>
+            <tr>
+              <td class="req-label">Authorization</td>
+              <td class="ctrl-text">Role middleware for admin &amp; researcher routes; protected dashboards</td>
+            </tr>
+            <tr>
+              <td class="req-label">Input Safety</td>
+              <td class="ctrl-text">Request limits Â· CSV-only upload Â· Pydantic validation Â· MongoDB sanitisation</td>
+            </tr>
+            <tr>
+              <td class="req-label">Data Protection</td>
+              <td class="ctrl-text">Password hashes &amp; 2FA secrets removed from API responses</td>
+            </tr>
+            <tr>
+              <td class="req-label">Auditability</td>
+              <td class="ctrl-text">Prediction history Â· dataset metadata Â· activity logs (100+ entries)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Conclusion -->
+    <div class="section">
+      <div class="section-header accent">Conclusion &amp; Future Work</div>
+      <div class="section-body">
+        <ul class="blist">
+          <li><strong>Stackingâ€“RF ensemble</strong> outperforms all individual models: Acc 98.44%, F1 0.9805</li>
+          <li>Platform successfully integrates <strong>explainable detection + RBAC + 2FA + logging</strong> into a single system</li>
+          <li>22/22 unit tests pass; 0% failure rate under 50-user Locust load</li>
+        </ul>
+        <div class="divider"></div>
+        <p style="font-size:8.5px;font-weight:700;color:var(--navy);margin-bottom:3px;">Future Enhancements:</p>
+        <div style="display:flex;flex-wrap:wrap;gap:2px;">
+          <span class="tag">Production DistilBERT/BERT weights</span>
+          <span class="tag green">SPF/DKIM/DMARC intelligence</span>
+          <span class="tag amber">Docker Compose + CI/CD</span>
+          <span class="tag">Refresh tokens</span>
+          <span class="tag">Password reset flow</span>
+          <span class="tag red">Production monitoring stack</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONCLUSION HIGHLIGHTS ROW -->
+    <div class="section span-3">
+      <div class="section-header" style="background:var(--navy);">Key Outcomes</div>
+      <div class="section-body">
+        <div class="conclusion-grid">
+          <div class="concl-item">
+            <div class="concl-icon">ðŸ”’</div>
+            <div class="concl-label">Secure</div>
+            <div class="concl-desc">JWT Â· RBAC Â· TOTP 2FA Â· bcrypt Â· activity logs</div>
+          </div>
+          <div class="concl-item">
+            <div class="concl-icon">ðŸ¤–</div>
+            <div class="concl-label">Intelligent</div>
+            <div class="concl-desc">BERT Â· DistilBERT Â· LLaMA Â· 5 ensemble methods</div>
+          </div>
+          <div class="concl-item">
+            <div class="concl-icon">ðŸ’¡</div>
+            <div class="concl-label">Explainable</div>
+            <div class="concl-desc">Indicators Â· risk terms Â· confidence score Â· plain-language reasoning</div>
+          </div>
+          <div class="concl-item">
+            <div class="concl-icon">ðŸ”¬</div>
+            <div class="concl-label">Research-Ready</div>
+            <div class="concl-desc">CSV upload Â· training pipeline Â· model comparison Â· metrics dashboard</div>
+          </div>
+          <div class="concl-item">
+            <div class="concl-icon">âœ…</div>
+            <div class="concl-label">Validated</div>
+            <div class="concl-desc">22/22 unit tests Â· Locust load testing Â· OWASP ZAP scanning</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end content grid -->
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div>
+      <strong>PhishLens</strong> Â· CIHE Secure AI Phishing Email Detection Project Â· Crown Institute of Higher Education, May 2026
+    </div>
+    <div style="text-align:center;font-style:italic;color:rgba(255,255,255,0.4);">
+      Detect threats. Explain risk. Protect users.
+    </div>
+    <div style="text-align:right;">
+      Supervised by <strong>Md. Ashraf Uddin</strong> &nbsp;|&nbsp; ashraf.uddin@cihe.edu.au
+    </div>
+  </div>
+
+</div><!-- end poster -->
+</body>
+</html>
+
