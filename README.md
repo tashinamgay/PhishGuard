@@ -63,11 +63,6 @@ Open:
 http://localhost:5173
 ```
 
-If port `8000` is already used by another project, run the included helper:
-
-```powershell
-.\Start-PhishGuard.ps1
-```
 
 This starts PhishGuard on:
 
@@ -76,11 +71,7 @@ Frontend: http://127.0.0.1:5174
 Backend:  http://127.0.0.1:8001
 ```
 
-To stop those helper-started services:
 
-```powershell
-.\Stop-PhishGuard.ps1
-```
 
 ## First Login Flow
 
@@ -122,26 +113,3 @@ python deploy_best_model.py
 | 2FA for all users | TOTP setup and login verification |
 | Security | Password hashing, JWT, RBAC, approval workflow, audit logs |
 
-## Submission Cleanup Checklist
-
-Before zipping the final project, remove these folders/files:
-
-```text
-frontend/node_modules/
-frontend/dist/
-backend/venv/
-backend/__pycache__/
-backend/.pytest_cache/
-backend/.env
-```
-
-Keep:
-
-```text
-backend/.env.example
-backend/requirements.txt
-frontend/package.json
-README.md
-```
-
-Keep trained model `.pkl` files only if your submission requires the demo to run without retraining.
