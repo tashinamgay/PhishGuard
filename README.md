@@ -45,9 +45,6 @@ SECRET_KEY=a long random secret
 
 Start the backend:
 
-```bash
-uvicorn main:app --reload --port 8000
-```
 
 ### 2. Frontend
 
@@ -55,12 +52,6 @@ uvicorn main:app --reload --port 8000
 cd frontend
 npm install
 npm run dev
-```
-
-Open:
-
-```text
-http://localhost:5173
 ```
 
 
