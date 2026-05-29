@@ -58,8 +58,8 @@ npm run dev
 This starts PhishGuard on:
 
 ```text
-Frontend: http://127.0.0.1:5174
-Backend:  http://127.0.0.1:8001
+Frontend: http://127.0.0.1:5173
+Backend:  http://127.0.0.1:8000
 ```
 
 
